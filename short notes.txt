@@ -1,0 +1,55 @@
+AI Tools Used
+-------------
+ChatGPT, OpenAI Codex, and Claude.
+
+Code Contribution
+-----------------
+~70–75% AI-assisted code generation
+~25–30% manual coding, debugging, testing, and integration.
+
+Roles & Permissions
+-------------------
+Prompted AI with explicit role definitions:
+- Creator: create, edit, submit tariffs
+- Approver: approve/reject pending tariffs
+- Viewer: view approved tariffs only
+
+AI Mistake & Fix
+----------------
+AI initially restricted Creators to viewing only contracts containing their own tariffs.
+
+Fix:
+- Show all contracts to Creators
+- Restrict editing/submission to creator-owned tariffs
+- Calculate creator-specific tariff counts separately
+
+Where I Verified Manually
+-------------------------
+- Overlap validation logic
+- Approval workflow
+- Permission checks
+- Persistent storage
+- Tariff ownership rules
+
+Duplicate Validation Decision
+-----------------------------
+Validation performed during APPROVAL rather than SUBMISSION.
+
+Reason:
+- Allows multiple creators to work simultaneously
+- Supports concurrent submissions
+- Matches assignment requirements
+
+Trade-off:
+- More flexibility for creators
+- Conflict resolved only when tariff becomes active
+
+Future Improvements
+-------------------
+If given two more hours, I would:
+
+1. Replace JSON persistence with SQLite
+2. Implement password hashing
+3. Improve charts using Chart.js
+4. Add search and filtering
+5. Introduce audit logs
