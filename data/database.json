@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "id": "u_creator",
+      "name": "Creator Maya",
+      "password": "creator123",
+      "role": "CREATOR"
+    },
+    {
+      "id": "u_dual_source",
+      "name": "Creator Sam",
+      "password": "creator123",
+      "role": "CREATOR"
+    },
+    {
+      "id": "u_approver",
+      "name": "Approver Dev",
+      "password": "approver123",
+      "role": "APPROVER"
+    },
+    {
+      "id": "u_viewer",
+      "name": "Viewer Noor",
+      "password": "viewer123",
+      "role": "VIEWER"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "c_india_europe",
+      "name": "India-Europe Mainline 2026",
+      "description": "Annual mainline pricing for India-Europe import and export container moves.",
+      "valid_from": "2026-01-01",
+      "valid_until": "2026-12-31"
+    },
+    {
+      "id": "c_asia_transship",
+      "name": "Asia Transshipment 2026",
+      "description": "Regional transshipment agreement covering hub moves across Asian ports.",
+      "valid_from": "2026-03-01",
+      "valid_until": "2026-11-30"
+    },
+    {
+      "id": "c_spot_q3",
+      "name": "Q3 Spot Capacity",
+      "description": "Short-term spot capacity contract for tactical Q3 tariff updates.",
+      "valid_from": "2026-07-01",
+      "valid_until": "2026-09-30"
+    }
+  ],
+  "tariffs": [
+    {
+      "id": "t_approved_import",
+      "contract_id": "c_india_europe",
+      "container_size": "20FT",
+      "move_type": "IMPORT",
+      "currency": "USD",
+      "price": 1200,
+      "valid_from": "2026-01-01",
+      "valid_until": "2026-06-30",
+      "status": "APPROVED",
+      "creator_id": "u_creator",
+      "rejection_reason": ""
+    },
+    {
+      "id": "t_pending_export",
+      "contract_id": "c_india_europe",
+      "container_size": "40FT",
+      "move_type": "EXPORT",
+      "currency": "EUR",
+      "price": 1850,
+      "valid_from": "2026-07-01",
+      "valid_until": "2026-09-30",
+      "status": "APPROVED",
+      "creator_id": "u_creator",
+      "rejection_reason": ""
+    },
+    {
+      "id": "t_draft_trans",
+      "contract_id": "c_asia_transship",
+      "container_size": "45FT",
+      "move_type": "TRANSSHIPMENT",
+      "currency": "USD",
+      "price": 900,
+      "valid_from": "2026-04-01",
+      "valid_until": "2026-08-31",
+      "status": "DRAFT",
+      "creator_id": "u_creator",
+      "rejection_reason": ""
+    },
+    {
+      "id": "t_rejected_import",
+      "contract_id": "c_spot_q3",
+      "container_size": "20FT",
+      "move_type": "IMPORT",
+      "currency": "INR",
+      "price": 64000,
+      "valid_from": "2026-07-15",
+      "valid_until": "2026-08-15",
+      "status": "REJECTED",
+      "creator_id": "u_creator",
+      "rejection_reason": "Price needs confirmation from finance."
+    },
+    {
+      "id": "t_100",
+      "contract_id": "c_india_europe",
+      "container_size": "20FT",
+      "move_type": "IMPORT",
+      "currency": "USD",
+      "price": 1000,
+      "valid_from": "2026-01-01",
+      "valid_until": "2026-12-31",
+      "status": "PENDING",
+      "creator_id": "u_dual_source",
+      "rejection_reason": ""
+    }
+  ],
+  "nextTariffNumber": 101,
+  "nextContractNumber": 100
+}
